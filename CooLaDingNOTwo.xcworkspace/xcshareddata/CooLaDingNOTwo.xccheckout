@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0C4A9995-C546-48B6-998F-A21E90704497</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CooLaDingNOTwo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CDD55CCA7338EE60989780BEE1DA1D002E1DDC0B</key>
+		<string>https://git.oschina.net/zhzenghui/Coolading_iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Coolading_Manager/CooLaDingNOTwo.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CDD55CCA7338EE60989780BEE1DA1D002E1DDC0B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://git.oschina.net/zhzenghui/Coolading_iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CDD55CCA7338EE60989780BEE1DA1D002E1DDC0B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CDD55CCA7338EE60989780BEE1DA1D002E1DDC0B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Coolading_iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
