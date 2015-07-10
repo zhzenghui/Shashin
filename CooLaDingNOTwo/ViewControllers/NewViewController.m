@@ -382,23 +382,31 @@
     SDAVAssetExportSession *encoder = [[SDAVAssetExportSession alloc] initWithAsset:asset];
     encoder.outputFileType = AVFileTypeMPEG4;
     encoder.outputURL = outputFileURL;
+    
+//    AVMutableVideoComposition *compositionInstruction = [AVMutableVideoComposition videoComposition];
+//    compositionInstruction.frameDuration = CMTimeMake(1, 30);
+//    compositionInstruction.renderSize = CGSizeMake(480, 640);    // frame rate
+//    encoder.videoComposition = compositionInstruction;
+
+    
     encoder.videoSettings = @
     {
-    AVVideoCodecKey: AVVideoCodecH264,
-    AVVideoWidthKey: @1920,
-    AVVideoHeightKey: @1080,
-    AVVideoCompressionPropertiesKey: @
+        AVVideoCodecKey: AVVideoCodecH264,
+        AVVideoWidthKey: @480,
+        AVVideoHeightKey: @640,
+        AVVideoCompressionPropertiesKey: @
         {
-        AVVideoAverageBitRateKey: @6000000,
-        AVVideoProfileLevelKey: AVVideoProfileLevelH264High40,
+            AVVideoAverageBitRateKey: @3840000,
+            AVVideoProfileLevelKey: AVVideoProfileLevelH264High40,
+            
         },
     };
     encoder.audioSettings = @
     {
-    AVFormatIDKey: @(kAudioFormatMPEG4AAC),
-    AVNumberOfChannelsKey: @2,
-    AVSampleRateKey: @44100,
-    AVEncoderBitRateKey: @128000,
+        AVFormatIDKey: @(kAudioFormatMPEG4AAC),
+        AVNumberOfChannelsKey: @2,
+        AVSampleRateKey: @44100,
+        AVEncoderBitRateKey: @128000,
     };
     
     [encoder exportAsynchronouslyWithCompletionHandler:^
@@ -413,7 +421,7 @@
         }
         else
         {
-            NSLog(@"Video export failed with error: %@ (%d)", encoder.error.localizedDescription, encoder.error.code);
+            NSLog(@"Video export failed with error: %@ (%ld)", encoder.error.localizedDescription, (long)encoder.error.code);
         }
     }];
 }

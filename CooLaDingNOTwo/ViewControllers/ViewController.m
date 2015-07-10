@@ -37,6 +37,7 @@
 #import "ListViewController.h"
 
 #import "NewViewController.h"
+#import "StatusBarView.h"
 
 
 #define KyuKanGongDi 1
@@ -317,19 +318,15 @@
         case 2: // 客服
         {
             
-            
-            if ( ! designData) {
-                
-                [Message messageAlert:@"您需要重新同步数据， 请点击右下角的刷新按钮重新下载数据"];
-                
-                return;
+//            
+            if ( [[StatusBarView sharedView] isShow] ) {
+
+                [[StatusBarView sharedView] dismiss];
             }
+            else {
             
-            ListViewController  *dvc  = [[ListViewController alloc] init];
-            dvc.list = workTeamData;
-            dvc.listType = ListTypeConstruction;
-            [self.navigationController pushViewController:dvc animated:YES];
-            
+                [[StatusBarView sharedView] show];
+            }
             
             break;
         }
@@ -413,17 +410,17 @@
     leftButton.tag = 1;
 //
 ////    工程队按钮
-//    IBJButton *rightButton = [IBJButton buttonWithType:UIButtonTypeCustom];
-//    rightButton.backgroundColor = TEST_COLOR;
-//    [rightButton addTarget:self action:@selector(openViewController:) forControlEvents:UIControlEventTouchUpInside];
-//    rightButton.frame = CGRectMake(KDeviceWidth/2, 0, KDeviceWidth/2, KDeviceHeight);
-//    [rightButton setImage:[UIImage imageNamed:@"首页-右"] forState:UIControlStateNormal];
-//    rightButton.tag = 2;
-//    
-//    
+    IBJButton *rightButton = [IBJButton buttonWithType:UIButtonTypeCustom];
+    rightButton.backgroundColor = TEST_COLOR;
+    [rightButton addTarget:self action:@selector(openViewController:) forControlEvents:UIControlEventTouchUpInside];
+    rightButton.frame = CGRectMake(KDeviceWidth/2, 0, KDeviceWidth/2, KDeviceHeight);
+    [rightButton setImage:[UIImage imageNamed:@"首页-右"] forState:UIControlStateNormal];
+    rightButton.tag = 2;
+    
+//
     [self.view addSubview:leftButton];
-//    [self.view addSubview:rightButton];
-//    
+    [self.view addSubview:rightButton];
+//
 //    
 //    
 //    IBJButton *button = [IBJButton buttonWithType:UIButtonTypeCustom];
@@ -435,7 +432,7 @@
 //    
 //    
 //    [self.view addSubview:button];
-//    
+//
 //    
 //    
 //    [self checkDownloadIsScuess];

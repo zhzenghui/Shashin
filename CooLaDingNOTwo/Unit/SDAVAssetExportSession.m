@@ -312,7 +312,7 @@
 
     if (trackFrameRate == 0)
     {
-        trackFrameRate = 30;
+        trackFrameRate = 24;
     }
 
 	videoComposition.frameDuration = CMTimeMake(1, trackFrameRate);
